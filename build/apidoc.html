@@ -61,12 +61,300 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.karma-mocha">module karma-mocha</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.karma-mocha.gruntfile">
+            function <span class="apidocSignatureSpan">karma-mocha.</span>gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.karma-mocha.wallaby">
+            function <span class="apidocSignatureSpan">karma-mocha.</span>wallaby
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma-mocha.gruntfile">module karma-mocha.gruntfile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.karma-mocha.gruntfile.gruntfile">
+            function <span class="apidocSignatureSpan">karma-mocha.</span>gruntfile
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.karma-mocha.wallaby">module karma-mocha.wallaby</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.karma-mocha.wallaby.wallaby">
+            function <span class="apidocSignatureSpan">karma-mocha.</span>wallaby
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.karma-mocha" id="apidoc.module.karma-mocha">module karma-mocha</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.karma-mocha.gruntfile" id="apidoc.element.karma-mocha.gruntfile">
+        function <span class="apidocSignatureSpan">karma-mocha.</span>gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gruntfile = function (grunt) {
+  grunt.initConfig({
+    pkgFile: &#x27;package.json&#x27;,
+    files: {
+      adapter: [
+        &#x27;src/adapter.js&#x27;
+      ]
+    },
+    build: {
+      adapter: &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;
+    },
+    eslint: {
+      target: [
+        &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;,
+        &#x27;*.js&#x27;,
+        &#x27;lib/index.js&#x27;,
+        &#x27;tasks/*.js&#x27;,
+        &#x27;test/**/*.js&#x27;
+      ]
+    },
+    karma: {
+      adapter: {
+        configFile: &#x27;karma.conf.js&#x27;,
+        autoWatch: false,
+        singleRun: true,
+        reporters: [&#x27;dots&#x27;]
+      }
+    },
+    &#x27;npm-publish&#x27;: {
+      options: {
+        requires: [&#x27;build&#x27;]
+      }
+    },
+    &#x27;npm-contributors&#x27;: {
+      options: {
+        commitMessage: &#x27;chore: update contributors&#x27;
+      }
+    },
+    conventionalChangelog: {
+      release: {
+        options: {
+          changelogOpts: {
+            preset: &#x27;angular&#x27;
+          }
+        },
+        src: &#x27;CHANGELOG.md&#x27;
+      }
+    },
+    bump: {
+      options: {
+        commitFiles: [
+          &#x27;package.json&#x27;,
+          &#x27;CHANGELOG.md&#x27;
+        ],
+        commitMessage: &#x27;chore: release v%VERSION%&#x27;,
+        pushTo: &#x27;upstream&#x27;
+      }
+    }
+  })
+
+  require(&#x27;load-grunt-tasks&#x27;)(grunt)
+  grunt.loadTasks(&#x27;tasks&#x27;)
+  grunt.registerTask(&#x27;default&#x27;, [&#x27;build&#x27;, &#x27;eslint&#x27;, &#x27;test&#x27;])
+  grunt.registerTask(&#x27;test&#x27;, [&#x27;karma&#x27;])
+
+  grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x27;, function (type) {
+    grunt.task.run([
+      &#x27;npm-contributors&#x27;,
+      &#x27;bump:&#x27; + (type || &#x27;patch&#x27;) + &#x27;:bump-only&#x27;,
+      &#x27;build&#x27;,
+      &#x27;conventionalChangelog&#x27;,
+      &#x27;bump-commit&#x27;,
+      &#x27;npm-publish&#x27;
+    ])
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.karma-mocha.wallaby" id="apidoc.element.karma-mocha.wallaby">
+        function <span class="apidocSignatureSpan">karma-mocha.</span>wallaby
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wallaby = function () {
+  return {
+    files: [
+      &#x27;lib/**/*@(.js)&#x27;
+    ],
+
+    tests: [
+      &#x27;./test/lib/**/*.spec@(.js)&#x27;
+    ],
+
+    env: {
+      type: &#x27;node&#x27;
+    },
+
+    testFramework: &#x27;mocha&#x27;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma-mocha.gruntfile" id="apidoc.module.karma-mocha.gruntfile">module karma-mocha.gruntfile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.karma-mocha.gruntfile.gruntfile" id="apidoc.element.karma-mocha.gruntfile.gruntfile">
+        function <span class="apidocSignatureSpan">karma-mocha.</span>gruntfile
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gruntfile = function (grunt) {
+  grunt.initConfig({
+    pkgFile: &#x27;package.json&#x27;,
+    files: {
+      adapter: [
+        &#x27;src/adapter.js&#x27;
+      ]
+    },
+    build: {
+      adapter: &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;
+    },
+    eslint: {
+      target: [
+        &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;,
+        &#x27;*.js&#x27;,
+        &#x27;lib/index.js&#x27;,
+        &#x27;tasks/*.js&#x27;,
+        &#x27;test/**/*.js&#x27;
+      ]
+    },
+    karma: {
+      adapter: {
+        configFile: &#x27;karma.conf.js&#x27;,
+        autoWatch: false,
+        singleRun: true,
+        reporters: [&#x27;dots&#x27;]
+      }
+    },
+    &#x27;npm-publish&#x27;: {
+      options: {
+        requires: [&#x27;build&#x27;]
+      }
+    },
+    &#x27;npm-contributors&#x27;: {
+      options: {
+        commitMessage: &#x27;chore: update contributors&#x27;
+      }
+    },
+    conventionalChangelog: {
+      release: {
+        options: {
+          changelogOpts: {
+            preset: &#x27;angular&#x27;
+          }
+        },
+        src: &#x27;CHANGELOG.md&#x27;
+      }
+    },
+    bump: {
+      options: {
+        commitFiles: [
+          &#x27;package.json&#x27;,
+          &#x27;CHANGELOG.md&#x27;
+        ],
+        commitMessage: &#x27;chore: release v%VERSION%&#x27;,
+        pushTo: &#x27;upstream&#x27;
+      }
+    }
+  })
+
+  require(&#x27;load-grunt-tasks&#x27;)(grunt)
+  grunt.loadTasks(&#x27;tasks&#x27;)
+  grunt.registerTask(&#x27;default&#x27;, [&#x27;build&#x27;, &#x27;eslint&#x27;, &#x27;test&#x27;])
+  grunt.registerTask(&#x27;test&#x27;, [&#x27;karma&#x27;])
+
+  grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x27;, function (type) {
+    grunt.task.run([
+      &#x27;npm-contributors&#x27;,
+      &#x27;bump:&#x27; + (type || &#x27;patch&#x27;) + &#x27;:bump-only&#x27;,
+      &#x27;build&#x27;,
+      &#x27;conventionalChangelog&#x27;,
+      &#x27;bump-commit&#x27;,
+      &#x27;npm-publish&#x27;
+    ])
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.karma-mocha.wallaby" id="apidoc.module.karma-mocha.wallaby">module karma-mocha.wallaby</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.karma-mocha.wallaby.wallaby" id="apidoc.element.karma-mocha.wallaby.wallaby">
+        function <span class="apidocSignatureSpan">karma-mocha.</span>wallaby
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wallaby = function () {
+  return {
+    files: [
+      &#x27;lib/**/*@(.js)&#x27;
+    ],
+
+    tests: [
+      &#x27;./test/lib/**/*.spec@(.js)&#x27;
+    ],
+
+    env: {
+      type: &#x27;node&#x27;
+    },
+
+    testFramework: &#x27;mocha&#x27;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

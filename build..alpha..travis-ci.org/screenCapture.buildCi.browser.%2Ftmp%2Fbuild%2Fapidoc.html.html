@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/karma-runner/karma-mocha#readme"
-
-    >karma-mocha (v1.3.0)</a>
+    <a href="https://github.com/karma-runner/karma-mocha#readme">karma-mocha (v1.3.0)</a>
 </h1>
 <h4>A Karma plugin. Adapter for Mocha testing framework.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.karma-mocha">module karma-mocha</a><ol>
 
@@ -122,77 +115,77 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">gruntfile = function (grunt) {
   grunt.initConfig({
-    pkgFile: &#x27;package.json&#x27;,
+    pkgFile: 'package.json',
     files: {
       adapter: [
-        &#x27;src/adapter.js&#x27;
+        'src/adapter.js'
       ]
     },
     build: {
-      adapter: &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;
+      adapter: '&lt;%= files.adapter %&gt;'
     },
     eslint: {
       target: [
-        &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;,
-        &#x27;*.js&#x27;,
-        &#x27;lib/index.js&#x27;,
-        &#x27;tasks/*.js&#x27;,
-        &#x27;test/**/*.js&#x27;
+        '&lt;%= files.adapter %&gt;',
+        '*.js',
+        'lib/index.js',
+        'tasks/*.js',
+        'test/**/*.js'
       ]
     },
     karma: {
       adapter: {
-        configFile: &#x27;karma.conf.js&#x27;,
+        configFile: 'karma.conf.js',
         autoWatch: false,
         singleRun: true,
-        reporters: [&#x27;dots&#x27;]
+        reporters: ['dots']
       }
     },
-    &#x27;npm-publish&#x27;: {
+    'npm-publish': {
       options: {
-        requires: [&#x27;build&#x27;]
+        requires: ['build']
       }
     },
-    &#x27;npm-contributors&#x27;: {
+    'npm-contributors': {
       options: {
-        commitMessage: &#x27;chore: update contributors&#x27;
+        commitMessage: 'chore: update contributors'
       }
     },
     conventionalChangelog: {
       release: {
         options: {
           changelogOpts: {
-            preset: &#x27;angular&#x27;
+            preset: 'angular'
           }
         },
-        src: &#x27;CHANGELOG.md&#x27;
+        src: 'CHANGELOG.md'
       }
     },
     bump: {
       options: {
         commitFiles: [
-          &#x27;package.json&#x27;,
-          &#x27;CHANGELOG.md&#x27;
+          'package.json',
+          'CHANGELOG.md'
         ],
-        commitMessage: &#x27;chore: release v%VERSION%&#x27;,
-        pushTo: &#x27;upstream&#x27;
+        commitMessage: 'chore: release v%VERSION%',
+        pushTo: 'upstream'
       }
     }
   })
 
-  require(&#x27;load-grunt-tasks&#x27;)(grunt)
-  grunt.loadTasks(&#x27;tasks&#x27;)
-  grunt.registerTask(&#x27;default&#x27;, [&#x27;build&#x27;, &#x27;eslint&#x27;, &#x27;test&#x27;])
-  grunt.registerTask(&#x27;test&#x27;, [&#x27;karma&#x27;])
+  require('load-grunt-tasks')(grunt)
+  grunt.loadTasks('tasks')
+  grunt.registerTask('default', ['build', 'eslint', 'test'])
+  grunt.registerTask('test', ['karma'])
 
-  grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x27;, function (type) {
+  grunt.registerTask('release', 'Build, bump and publish to NPM.', function (type) {
     grunt.task.run([
-      &#x27;npm-contributors&#x27;,
-      &#x27;bump:&#x27; + (type || &#x27;patch&#x27;) + &#x27;:bump-only&#x27;,
-      &#x27;build&#x27;,
-      &#x27;conventionalChangelog&#x27;,
-      &#x27;bump-commit&#x27;,
-      &#x27;npm-publish&#x27;
+      'npm-contributors',
+      'bump:' + (type || 'patch') + ':bump-only',
+      'build',
+      'conventionalChangelog',
+      'bump-commit',
+      'npm-publish'
     ])
   })
 }</pre></li>
@@ -211,18 +204,18 @@
     <li>description and source-code<pre class="apidocCodePre">wallaby = function () {
   return {
     files: [
-      &#x27;lib/**/*@(.js)&#x27;
+      'lib/**/*@(.js)'
     ],
 
     tests: [
-      &#x27;./test/lib/**/*.spec@(.js)&#x27;
+      './test/lib/**/*.spec@(.js)'
     ],
 
     env: {
-      type: &#x27;node&#x27;
+      type: 'node'
     },
 
-    testFramework: &#x27;mocha&#x27;
+    testFramework: 'mocha'
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -244,77 +237,77 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">gruntfile = function (grunt) {
   grunt.initConfig({
-    pkgFile: &#x27;package.json&#x27;,
+    pkgFile: 'package.json',
     files: {
       adapter: [
-        &#x27;src/adapter.js&#x27;
+        'src/adapter.js'
       ]
     },
     build: {
-      adapter: &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;
+      adapter: '&lt;%= files.adapter %&gt;'
     },
     eslint: {
       target: [
-        &#x27;&#x3c;%= files.adapter %&#x3e;&#x27;,
-        &#x27;*.js&#x27;,
-        &#x27;lib/index.js&#x27;,
-        &#x27;tasks/*.js&#x27;,
-        &#x27;test/**/*.js&#x27;
+        '&lt;%= files.adapter %&gt;',
+        '*.js',
+        'lib/index.js',
+        'tasks/*.js',
+        'test/**/*.js'
       ]
     },
     karma: {
       adapter: {
-        configFile: &#x27;karma.conf.js&#x27;,
+        configFile: 'karma.conf.js',
         autoWatch: false,
         singleRun: true,
-        reporters: [&#x27;dots&#x27;]
+        reporters: ['dots']
       }
     },
-    &#x27;npm-publish&#x27;: {
+    'npm-publish': {
       options: {
-        requires: [&#x27;build&#x27;]
+        requires: ['build']
       }
     },
-    &#x27;npm-contributors&#x27;: {
+    'npm-contributors': {
       options: {
-        commitMessage: &#x27;chore: update contributors&#x27;
+        commitMessage: 'chore: update contributors'
       }
     },
     conventionalChangelog: {
       release: {
         options: {
           changelogOpts: {
-            preset: &#x27;angular&#x27;
+            preset: 'angular'
           }
         },
-        src: &#x27;CHANGELOG.md&#x27;
+        src: 'CHANGELOG.md'
       }
     },
     bump: {
       options: {
         commitFiles: [
-          &#x27;package.json&#x27;,
-          &#x27;CHANGELOG.md&#x27;
+          'package.json',
+          'CHANGELOG.md'
         ],
-        commitMessage: &#x27;chore: release v%VERSION%&#x27;,
-        pushTo: &#x27;upstream&#x27;
+        commitMessage: 'chore: release v%VERSION%',
+        pushTo: 'upstream'
       }
     }
   })
 
-  require(&#x27;load-grunt-tasks&#x27;)(grunt)
-  grunt.loadTasks(&#x27;tasks&#x27;)
-  grunt.registerTask(&#x27;default&#x27;, [&#x27;build&#x27;, &#x27;eslint&#x27;, &#x27;test&#x27;])
-  grunt.registerTask(&#x27;test&#x27;, [&#x27;karma&#x27;])
+  require('load-grunt-tasks')(grunt)
+  grunt.loadTasks('tasks')
+  grunt.registerTask('default', ['build', 'eslint', 'test'])
+  grunt.registerTask('test', ['karma'])
 
-  grunt.registerTask(&#x27;release&#x27;, &#x27;Build, bump and publish to NPM.&#x27;, function (type) {
+  grunt.registerTask('release', 'Build, bump and publish to NPM.', function (type) {
     grunt.task.run([
-      &#x27;npm-contributors&#x27;,
-      &#x27;bump:&#x27; + (type || &#x27;patch&#x27;) + &#x27;:bump-only&#x27;,
-      &#x27;build&#x27;,
-      &#x27;conventionalChangelog&#x27;,
-      &#x27;bump-commit&#x27;,
-      &#x27;npm-publish&#x27;
+      'npm-contributors',
+      'bump:' + (type || 'patch') + ':bump-only',
+      'build',
+      'conventionalChangelog',
+      'bump-commit',
+      'npm-publish'
     ])
   })
 }</pre></li>
@@ -338,18 +331,18 @@
     <li>description and source-code<pre class="apidocCodePre">wallaby = function () {
   return {
     files: [
-      &#x27;lib/**/*@(.js)&#x27;
+      'lib/**/*@(.js)'
     ],
 
     tests: [
-      &#x27;./test/lib/**/*.spec@(.js)&#x27;
+      './test/lib/**/*.spec@(.js)'
     ],
 
     env: {
-      type: &#x27;node&#x27;
+      type: 'node'
     },
 
-    testFramework: &#x27;mocha&#x27;
+    testFramework: 'mocha'
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -364,3 +357,4 @@
     ]
 </div>
 </div>
+</body></html>
