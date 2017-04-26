@@ -1,6 +1,6 @@
 # npmdoc-karma-mocha
 
-#### api documentation for  [karma-mocha (v1.3.0)](https://github.com/karma-runner/karma-mocha#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-karma-mocha.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-karma-mocha) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-karma-mocha.svg)](https://travis-ci.org/npmdoc/node-npmdoc-karma-mocha)
+#### basic api documentation for  [karma-mocha (v1.3.0)](https://github.com/karma-runner/karma-mocha#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-karma-mocha.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-karma-mocha) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-karma-mocha.svg)](https://travis-ci.org/npmdoc/node-npmdoc-karma-mocha)
 
 #### A Karma plugin. Adapter for Mocha testing framework.
 
@@ -202,7 +202,8 @@
         "editorconfig": ".editorconfig",
         "gitattributes": ".gitattributes"
     },
-    "version": "1.3.0"
+    "version": "1.3.0",
+    "bin": {}
 }
 ```
 
